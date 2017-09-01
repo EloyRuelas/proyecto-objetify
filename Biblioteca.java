@@ -9,6 +9,10 @@ public class Biblioteca
         reproductor=new Reproductor();
     }
     
+    /**
+     * Añade un archivo a la coleccion.
+     * @param nombreArchivo El archivo que hay que añadir.
+     */
     public void agregarCancion(String nombreArchivo)
     {
         canciones.add(nombreArchivo);
@@ -19,18 +23,43 @@ public class Biblioteca
         reproductor.reproducir(canciones.get(numCancion));
     }
     
+    /**
+     * Devuelve el número de archivos de la coleccion.
+     * @return El número de archivos de la coleccion.
+     */
     public int obtenerNumeroDeCanciones()
     {
         return canciones.size();
     }
     
-    public void muestraCancion(int numCancion)
+    /**
+     * Muestra un archivo de la coleccion.
+     * @param index El indice del archivo que hay que mostrar.
+     */
+    public void muestraCancion(int index)
+    {
+        if(index >= 0 && index < canciones.size())
+        {
+            String nombreArchivo=canciones.get(index);
+            System.out.println(nombreArchivo);
+        }
+    }
+    
+    /**
+     * Elimina un archivo de la coleccion.
+     * @param index El indice del archivo que hay que eliminar.
+     */
+    public void BorraCancion(int numCancion)
     {
         if(numCancion >= 0 && numCancion < canciones.size())
         {
             canciones.remove(numCancion);
         }
     }
+    
+    /**
+     * Muestra una lista de todos los elementos.
+     */
     public void muestraTodosLosArchivos()
     {
         for(String nombreArchivo : canciones)
@@ -39,6 +68,11 @@ public class Biblioteca
         }
     }
     
+    /**
+     * Enumera los nombres de archivos que se corresponden con
+     * la cadena de busqueda proporcionada
+     * @param palabraBusc La cadena que hay que buscar.
+     */
     public void imprimirElementoSeleccionado(String palabraBusc)
     {
         for(String nombreArchivo : canciones)
@@ -51,6 +85,9 @@ public class Biblioteca
         }
     }
     
+    /**
+     * Muestra una lista de todos los archivos de la coleccion.
+     */
     public void mostrarLista()
     {
         int index = 0;
@@ -62,6 +99,13 @@ public class Biblioteca
         }
     }
     
+    /**
+     * Localiza el indice del primer archivo que se corresponde con la cadena
+     * de busqueda indicada.
+     * @param palabra La cadena que hay que buscar.
+     * @return El indice de la primera aparicion, es decir -1 si no se encuentra
+     *         ninguna correspondencia.
+     */
     public int localizaPrimerPalabra(String palabra)
     {
         int index=0;
