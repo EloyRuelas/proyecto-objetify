@@ -6,4 +6,9 @@ public class Reproductor
         //simular la reproduccion
         System.out.println("Reproduciendo: " + nombreArchivo);
     }
+    
+    public void detenerMusica()
+    {
+        System.out.println("Cancion detenida");
+    }
 }
