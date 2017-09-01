@@ -33,7 +33,7 @@ public class Biblioteca
     }
     
     /**
-     * Muestra un archivo de la coleccion.
+     * Muestra un archivo de la coleccion Siempre empeznado en 0.
      * @param index El indice del archivo que hay que mostrar.
      */
     public void muestraCancion(int index)
